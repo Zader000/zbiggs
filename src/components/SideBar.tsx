@@ -1,4 +1,3 @@
-import {BsPlus, BsFillPersonLinesFill, BsFillLightningFill, BsGearFill, BsHouseFill} from "react-icons/bs";
 import React from "react";
 
 interface SideBarProps
@@ -20,16 +19,17 @@ interface SideBarIconProps
     icon: React.ReactNode;
     tooltip?: string;
     onClick?: () => void;
+    isActive: boolean;
 }
 
-export function SideBarIcon({ icon, tooltip, onClick }: SideBarIconProps)
+export function SideBarIcon({ icon, tooltip, onClick, isActive }: SideBarIconProps)
 {
     if (!tooltip)
     {
         tooltip = "Tooltip 💡";
     }
     return(
-        <div className="sidebar-icon group" onClick={onClick}>
+        <div className={`sidebar-icon group ${(isActive ? 'active-icon' : '')}`} onClick={onClick}>
             {icon}
             <span className="sidebar-tooltip group-hover:scale-100">{tooltip}</span>
         </div>
