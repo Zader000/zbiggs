@@ -1,3 +1,5 @@
+import {Card, Deck} from "../components/Card";
+
 export function ProjectsPage()
 {
     return (
@@ -6,40 +8,24 @@ export function ProjectsPage()
                 <h1 className='text-5xl text-white font-extrabold'>Projects</h1>
             </header>
             <main className='main'>
-                <div className=''>
-                    <table className='table-fixed'>
-                        <thead className='bg-gray-900'>
-                        <tr>
-                            <th className='cell'>Name</th>
-                            <th className='cell'>Description</th>
-                            <th className='cell'>Link</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td className='cell'>zbiggs.com</td>
-                                <td className='cell'>My personal website. I.E. This site.</td>
-                                <td className='cell'><a href='https://github.com/Zader000/zbiggs' className='purple-btn'>GitHub</a></td>
-                            </tr>
-                            <tr>
-                                <td className='cell'>Etilize Integration</td>
-                                <td className='cell'>
-                                    Created a front-end that would allow the user to search for products that we sell.
-                                    <br/>
-                                    It returns all the product info along with the pricing from all our vendors for the given SKU's.
-                                </td>
-                                <td className='cell'><a href='#' className='purple-btn'>N/A</a></td>
-                            </tr>
-                            <tr>
-                                <td className='cell'>Salesforce E-Signature</td>
-                                <td className='cell'>
-                                    React app for customers to sign quotes. The app is embedded in Salesforce and uses Salesforce's API to get quote information and update the quote with the signature.
-                                </td>
-                                <td className='cell'><a href='#' className='purple-btn'>N/A</a></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+                <Deck>
+                    <Card title={'zbiggs.com'} description={'My personal website. I.E. This site. Written in React with Tailwind CSS.'}
+                          link={'https://github.com/Zader000/zbiggs'} linkText={'GitHub'}/>
+                    <Card title={'Etilize Integration'} description={'Created a front-end that would allow the user to ' +
+                        'search for products that we sell. It returns all the product info along with the pricing from all our vendors for the given SKU\'s.'}/>
+                    <Card title={'Salesforce eSignature'} description={'React app for customers to sign quotes. ' +
+                        'The app is embedded in Salesforce and uses Salesforce\'s API to get quote information and update the quote with the signature.'}/>
+                </Deck>
+                <br/>
+                <Deck>
+                    <Card title={'Woo Commerce Integration'} description={'Created a RESTful API to handle webhooks from ' +
+                        'Woo Commerce. For submitted orders, the API would then create an Opportunity in Salesforce and a Quote in Microsoft Dynamics GP.'}/>
+                    <Card title={'Baked By Al'} description={'A website for a local baker. The site is built with Django. ' +
+                        'Allows customers to view a gallery of cakes and place an order. The admin can do CRUD operations for product and orders in the admin panel'}
+                          link={'https://github.com/Zader000/BakedByAl'} linkText={'GitHub'}/>
+                    <Card title={'Lease Docs Generator'} description={'Used Apex and Visualforce to generate a pdf of a ' +
+                        'lease document and attach that pdf to the customer\'s account in Salesforce.'}/>
+                </Deck>
             </main>
         </>
     );
