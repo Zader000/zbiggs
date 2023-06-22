@@ -16,9 +16,29 @@ export function MainPage()
                 <SideBarIcon icon={<BsFillPersonLinesFill/>} tooltip={'Resume'} onClick={()=>setPage(1)} isActive={page === 1}/>
                 <SideBarIcon icon={<BsFillPencilFill/>} tooltip={'Projects'} onClick={()=>setPage(2)} isActive={page === 2}/>
             </SideBar>
-            {page === 0 && <HomePage/>}
-            {page === 1 && <ResumePage/>}
-            {page === 2 && <ProjectsPage/>}
+            {page === 0 && (
+                <HomePage>
+                    <br/>
+                    <div className='flex justify-center gap-3 w-screen'>
+                        <button className='purple-btn' onClick={()=>setPage(1)}>See My Resume</button>
+                        <button className='purple-btn' onClick={()=>setPage(2)}>See My Projects</button>
+                    </div>
+                </HomePage>
+            )}
+            {page === 1 && (
+                <ResumePage>
+                    <div>
+                        <button className='purple-btn' onClick={()=>setPage(0)}>Back</button>
+                    </div>
+                </ResumePage>
+            )}
+            {page === 2 && (
+                <ProjectsPage>
+                    <div>
+                        <button className='purple-btn' onClick={()=>setPage(0)}>Back</button>
+                    </div>
+                </ProjectsPage>
+            )}
         </div>
     )
 }

@@ -1,6 +1,10 @@
 import {Card, Deck} from "../components/Card";
 
-export function ProjectsPage()
+interface ProjectsPageProps {
+    children: React.ReactNode;
+}
+
+export function ProjectsPage({children}: ProjectsPageProps)
 {
     return (
         <>
@@ -26,6 +30,10 @@ export function ProjectsPage()
                     <Card title={'Lease Docs Generator'} description={'Used Apex and Visualforce to generate a pdf of a ' +
                         'lease document and attach that pdf to the customer\'s account in Salesforce.'}/>
                 </Deck>
+                <br/>
+                <div>
+                    {children}
+                </div>
             </main>
         </>
     );
