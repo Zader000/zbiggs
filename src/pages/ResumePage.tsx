@@ -1,8 +1,8 @@
-interface ResumePageProps {
-    children: React.ReactNode;
-}
 
-export function ResumePage({children}: ResumePageProps)
+
+
+
+export function ResumePage()
 {
     return(
         <>
@@ -12,9 +12,6 @@ export function ResumePage({children}: ResumePageProps)
             <main className='main'>
                 <iframe title='Resume' style={{width: '750px', height: '800px'}} src="https://drive.google.com/file/d/1hgpf16amUmm_2lJKvHL8jodPLtIrYSdpqba1ZH3chJA/preview?usp=embed_googleplus" allowFullScreen></iframe>
                 <br/>
-                <div>
-                    {children}
-                </div>
             </main>
         </>
     );

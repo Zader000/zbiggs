@@ -1,8 +1,6 @@
-interface HomePageProps {
-    children: React.ReactNode;
-}
+;
 
-export function HomePage({children}: HomePageProps)
+export function HomePage()
 {
     return(
         <>
@@ -18,9 +16,6 @@ export function HomePage({children}: HomePageProps)
                 <p className='text-white text-xl'>
                     I enjoy doing full stack development. I like making a nice looking clean UI but I also love solving the hard problems of the backend and integrating with other software systems.
                 </p>
-                <div>
-                    {children}
-                </div>
                 <br/>
                 <img src='https://zbiggs.com/images/programmer_man2.png' alt='programmer'/>
             </main>
