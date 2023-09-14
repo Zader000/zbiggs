@@ -3,10 +3,10 @@ import './App.css';
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import {HomePage} from "./pages/HomePage";
 import {ResumePage} from "./pages/ResumePage";
-import {ProjectsPage} from "./pages/ProjectsPage";
+import {projectsLoader, ProjectsPage} from "./pages/ProjectsPage";
 import {SideBar} from "./components/SideBar";
 import NotFoundPage from "./pages/NotFoundPage";
-import ContactPage from "./pages/ContactPage";
+import ContactPage, {ContactPageSubmitAction} from "./pages/ContactPage";
 import ProjectDetailsPage from "./pages/ProjectDetailsPage";
 import {projectDetailsLoader} from "./pages/ProjectDetailsPage";
 
@@ -29,18 +29,20 @@ const router = createBrowserRouter([
                 children: [
                     {
                         index: true,
+                        loader: projectsLoader,
                         element: <ProjectsPage/>
                     },
                     {
-                        path: '/:projectId',
+                        path: ':projectId',
                         element: <ProjectDetailsPage/>,
                         loader: projectDetailsLoader
                     }
-                ]
+                ],
             },
             {
                 path: '/contact',
-                element: <ContactPage/>
+                element: <ContactPage/>,
+                action: ContactPageSubmitAction
             }
         ]
     }

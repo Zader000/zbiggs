@@ -22,7 +22,7 @@
   }
 
   .main {
-    @apply text-center text-white flex flex-col items-center h-screen p-8
+    @apply text-center text-white flex flex-col items-center h-screen p-8 ml-8
   }
 
   .purple-btn {
@@ -35,6 +35,22 @@
 
   body {
     @apply bg-gray-700;
+  }
+
+  .link {
+    @apply bg-purple-500 hover:bg-purple-700 rounded px-4 py-2 text-xl;
+  }
+
+  .control-group {
+    @apply flex flex-col items-center mb-3;
+  }
+
+  .form-control {
+    @apply w-full bg-gray-800 text-white rounded-lg px-4 py-2 border border-gray-700 focus:outline-none focus:border-purple-500;
+  }
+
+  .form-label {
+    @apply text-lg font-bold mb-2;
   }
 }
 
