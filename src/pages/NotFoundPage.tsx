@@ -8,7 +8,7 @@ function NotFoundPage() {
                 <h1 className='text-white text-8xl font-bold'>404</h1>
                 <br/>
                 <p className='text-white text-xl'>
-                    Page not found
+                    oops! Page not found
                 </p>
             </main>
         </>
