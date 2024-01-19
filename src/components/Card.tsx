@@ -2,10 +2,9 @@ interface CardProps {
     title: string;
     description: string;
     link?: string;
-    linkText?: string;
 }
 
-export function Card({title, description, link, linkText}: CardProps)
+export function Card({title, description, link}: CardProps)
 {
     return (
         <div className='flex-col rounded bg-gray-900 p-0 justify-around items-center w-64 shadow-lg'>
@@ -15,9 +14,9 @@ export function Card({title, description, link, linkText}: CardProps)
             <div className='p-3'>
                 <p className='text-white text-lg'>{description}</p>
             </div>
-            {link && linkText && (
+            {link && (
                 <div className='m-5'>
-                    <a href={link} className='purple-btn'>{linkText}</a>
+                    <a href={link} className='purple-btn'>Github</a>
                 </div>
             )}
         </div>

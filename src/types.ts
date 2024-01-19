@@ -1,9 +1,15 @@
 export type Project = {
     Id: number;
-    Title: string;
+    Name: string;
     Description: string;
-    Link?: string | null;
-    LinkText?: string | null;
+    GithubLink: string;
+		Images: ProjectImage[];
+}
+
+export type ProjectImage = {
+	Id: number;
+	ProjectId: number;
+	Path: string;
 }
 
 export type Contact = {
