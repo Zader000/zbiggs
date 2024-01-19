@@ -1,4 +1,4 @@
-import {ProjectImage} from "../types.ts";
+import {ProjectImage} from "../types";
 
 
 export function Image(image: ProjectImage) {
