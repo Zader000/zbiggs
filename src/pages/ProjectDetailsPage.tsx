@@ -6,23 +6,27 @@ import {Project} from "../types";
 
 function ProjectDetailsPage() {
 
-    const data  = useLoaderData() as Project
+    const data = useLoaderData() as Project
 
-    console.log(data)
     return (
         <>
             <header className='header'>
                 <h1 className='text-5xl text-white font-extrabold'>Projects</h1>
             </header>
             <main className={'main'}>
-							<>
-                <Card title={data.Name} description={data.Description} link={data.GithubLink} />
-								{data.Images.map(img => {
-									<Image image={img} />
-								})}
+                <Card title={data.Name} description={data.Description} link={data.GithubLink}/>
                 <br/>
                 <Link to={'/projects'} className={'link'}>Back to Projects</Link>
-							</>
+                <br/>
+                {data.Images.map((image) => (
+                    <>
+                        <div>
+                            <Image img={image}/>
+                        </div>
+                        <br/>
+                    </>
+                ))}
+                <br/>
             </main>
         </>
     );

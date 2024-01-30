@@ -1,11 +1,12 @@
 import {ProjectImage} from "../types";
 
+interface ImageProps {
+	img: ProjectImage;
+}
 
-export function Image(image: ProjectImage) {
+export function Image({img}: ImageProps) {
 	return (
-		<div>
-			<img src={image.Path} alt={''} style={{width: '50%'}}/>
-		</div>
+		<img src={img.Path} alt={''} className={'center-img'}/>
 	);
 }
 
